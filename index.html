@@ -7,8 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Englebert&family=League+Spartan:wght@100..900&family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
         :root {
@@ -81,6 +84,7 @@
         #projectContainer {
             display: grid;
             grid-template-columns: 1fr 2fr calc(var(--content-width) - 2px) 2fr 1fr;
+
         }
 
         .project {
@@ -112,14 +116,32 @@
 
         .figure-container figure {
             height: 500px;
+            text-align: left;
         }
 
         .figure-container figure img {
             width: 100%;
             height: 100%;
             object-fit: fill;
-
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 0.8s ease-in;
         }
+
+        .figure-container figure img.show {
+            animation: reveal 0.8s forwards;
+        }
+
+        @keyframes reveal {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+
 
         .project-name {
             color: red;
@@ -173,10 +195,78 @@
             height: 350px;
             object-fit: contain;
         }
+
+        .logo-container {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .nav-items-list {
+            position: absolute;
+            top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            right: 30px;
+        }
+
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .nav-item a {
+            color: black;
+            text-decoration: none;
+            font-family: "Black Han Sans", sans-serif;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+        }
+
+        .nav-item a:hover {
+            border-color: black;
+            border-bottom: 1px solid black;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .links {
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            font-size: 1.6rem;
+        }
+
+        .copyright {
+            color: gray;
+            font-size: .8rem;
+            margin-top: 10px;
+        }
+
+        a {
+            color: black;
+        }
     </style>
 </head>
 
 <body>
+    <figure class="logo-container"><img src="" alt="logo">aa</figure>
+    <nav>
+        <ul class="nav-items-list">
+            <li class="nav-item"><a href="">Home</a></li>
+            <li class="nav-item"><a href="">About</a></li>
+            <li class="nav-item"><a href="">Resume</a></li>
+        </ul>
+    </nav>
     <main>
         <section id="introPage">
             <div class="page-content">
@@ -213,7 +303,7 @@
                         <div class="line"></div>
                         <figure>
                             <img src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
-                                alt="image">
+                                alt="image" class="pimg">
                         </figure>
                     </div>
 
@@ -223,7 +313,7 @@
                         <div class="line"></div>
                         <figure><img
                                 src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
-                                alt="image"></figure>
+                                alt="image" class="pimg"></figure>
                     </div>
                     <div class="content-container bb">
                         <p class="project-name"><i>Digital-Kirana</i></p>
@@ -248,7 +338,7 @@
 
                         <figure><img
                                 src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
-                                alt="image"></figure>
+                                alt="image" class="pimg"></figure>
                     </div>
 
                 </section>
@@ -258,7 +348,7 @@
 
                         <figure><img
                                 src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
-                                alt="image"></figure>
+                                alt="image" class="pimg"></figure>
                     </div>
                     <div class="content-container bb">
                         <p class="project-name"><i>Digital-Kirana</i></p>
@@ -270,6 +360,18 @@
 
 
                 </section>
+                <section class="project-5 project">
+                    <div class="content-container bb">
+
+                    </div>
+                    <div class="figure-container bl bb">
+                        <div class="line"></div>
+
+                        <figure></figure>
+                    </div>
+
+                </section>
+
             </section>
             <div class="bl br bb"></div>
             <div class="bb"></div>
@@ -308,6 +410,31 @@
         </section>
 
     </main>
+    <footer>
+        <div class="links">
+            <span> Let's talk :)
+            </span>
+            <span>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+                <a href=""></a>
+            </span>
+        </div>
+        <span class="copyright">© Beasty 2021 </span>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (
+                    entry.isIntersecting
+                ) {
+                    entry.target.classList.add('show');
+                }
+
+            });
+        });
+        const hiddenElements = document.querySelectorAll('.pimg');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 
 </body>
 
