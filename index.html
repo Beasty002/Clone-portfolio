@@ -66,35 +66,48 @@
         }
 
         .some-facts {
-            display: flex;
             flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
 
         }
 
         .some-facts>* {
-            flex: 1;
+            grid-template-rows: subgrid;
+            align-content: center;
+            text-align: center;
         }
 
         #projectContainer {
             display: grid;
-            grid-template-columns: 1fr 2fr var(--content-width) 2fr 1fr;
+            grid-template-columns: 1fr 2fr calc(var(--content-width) - 2px) 2fr 1fr;
         }
 
         .project {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .project:nth-child(even) {
+            grid-template-columns: 2fr 1fr;
+
         }
 
         .content-container {
-            flex: 1;
-            padding: 10px;
-            padding-bottom: 60px;
+            box-sizing: border-box;
+            padding: 60px 20px;
+            padding-left: 10px;
             align-self: flex-end;
-            te
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
         }
 
         .figure-container {
             flex: 2;
             padding: 60px 0px;
+            position: relative;
         }
 
         .figure-container figure {
@@ -102,9 +115,63 @@
         }
 
         .figure-container figure img {
-            height: 100%;
             width: 100%;
+            height: 100%;
             object-fit: fill;
+
+        }
+
+        .project-name {
+            color: red;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        .line {
+            display: none;
+            position: absolute;
+            top: 0;
+            border-left: 1px solid var(--border-primary-color);
+            height: 100%;
+            width: 1px;
+            right: 50%;
+            z-index: -1;
+        }
+
+        #pastProject {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .title-container h1 {
+            display: block;
+            width: var(--content-width);
+            padding: 30px 0px;
+            font-size: 2rem;
+        }
+
+        .past-project-container {
+            padding: 30px 0px;
+        }
+
+        .past-project-container {
+            width: var(--content-width);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .proj figure a img {
+            width: 100%;
+            height: 350px;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -117,32 +184,127 @@
                     <h1>Beasty ...</h1>
                 </div>
                 <div class="some-facts">
-                    <p class="fact1 bl br"></p>
-                    <p class="fact2 br"></p>
-                    <p class="fact3 br"></p>
+                    <div class="fact1 bl br">
+                        <h1>place your content here</h1>
+                    </div>
+                    <div class="fact2 br">
+                        <h1>place your content here</h1>
+                    </div>
+                    <div class="fact3 br">
+                        <h1>place your content here</h1>
+                    </div>
                 </div>
             </div>
 
         </section>
         <section id="projectContainer">
-            <div class="br"></div>
-            <div class="br"></div>
+            <div class="br bb"></div>
+            <div class="br bb"></div>
             <section class="project-lists">
                 <section class="project-1 project">
-                    <div class="content-container">
-                        <p class="project-name">Digital-Kirana</p>
+                    <div class="content-container bb">
+                        <p class="project-name"><i>Digital-Kirana</i></p>
                         <h2 class="project-objective"> Increasing operational efficiency in facilities management</h2>
+                        <p class="project-role">
+                            Designer | Developer | Frontend | So on
+                        </p>
                     </div>
-                    <div class="figure-container">
+                    <div class="figure-container bl bb">
+                        <div class="line"></div>
+                        <figure>
+                            <img src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt="image">
+                        </figure>
+                    </div>
+
+                </section>
+                <section class="project-2 project">
+                    <div class="figure-container br bb">
+                        <div class="line"></div>
+                        <figure><img
+                                src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt="image"></figure>
+                    </div>
+                    <div class="content-container bb">
+                        <p class="project-name"><i>Digital-Kirana</i></p>
+                        <h2 class="project-objective"> Increasing operational efficiency in facilities management</h2>
+                        <p class="project-role">
+                            Designer | Developer | Frontend | So on
+                        </p>
+                    </div>
+
+
+                </section>
+                <section class="project-3 project">
+                    <div class="content-container bb">
+                        <p class="project-name"><i>Digital-Kirana</i></p>
+                        <h2 class="project-objective"> Increasing operational efficiency in facilities management</h2>
+                        <p class="project-role">
+                            Designer | Developer | Frontend | So on
+                        </p>
+                    </div>
+                    <div class="figure-container bl bb">
+                        <div class="line"></div>
+
                         <figure><img
                                 src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
                                 alt="image"></figure>
                     </div>
 
                 </section>
+                <section class="project-4 project">
+                    <div class="figure-container br bb">
+                        <div class="line"></div>
+
+                        <figure><img
+                                src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt="image"></figure>
+                    </div>
+                    <div class="content-container bb">
+                        <p class="project-name"><i>Digital-Kirana</i></p>
+                        <h2 class="project-objective"> Increasing operational efficiency in facilities management</h2>
+                        <p class="project-role">
+                            Designer | Developer | Frontend | So on
+                        </p>
+                    </div>
+
+
+                </section>
             </section>
-            <div class="bl br"></div>
-            <div></div>
+            <div class="bl br bb"></div>
+            <div class="bb"></div>
+        </section>
+        <section id="pastProject">
+            <div class="bb title-container">
+                <h1>Other Project</h1>
+            </div>
+            <div class="past-project-container">
+                <div class="proj">
+                    <figure><a href=""><img
+                                src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt=""></a></figure>
+                    <figcaption>Hello</figcaption>
+                </div>
+                <div class="proj">
+                    <figure><a href=""><img
+                                src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt=""></a></figure>
+                    <figcaption>Hello</figcaption>
+                </div>
+                <div class="proj">
+                    <figure><a href=""><img
+                                src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt=""></a></figure>
+                    <figcaption>Hello</figcaption>
+                </div>
+                <div class="proj">
+                    <figure><a href=""><img
+                                src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt=""></a></figure>
+                    <figcaption>Hello</figcaption>
+                </div>
+
+            </div>
         </section>
 
     </main>
