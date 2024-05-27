@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root {
+            --content-width: 1000px;
+            --border-primary-color: rgba(186, 172, 172, 0.225);
+        }
+
+        * {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bt {
+            border-top: 1px solid var(--border-primary-color);
+        }
+
+        .bb {
+            border-bottom: 1px solid var(--border-primary-color);
+        }
+
+        .bl {
+            border-left: 1px solid var(--border-primary-color);
+        }
+
+        .br {
+            border-right: 1px solid var(--border-primary-color);
+        }
+
+        #introPage {
+            background-color: #d9afd91a;
+            background-image: linear-gradient(0deg, #d9afd954 0%, #97dae118 100%);
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-content {
+            height: 80dvh;
+            width: var(--content-width);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .name-container h1 {
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        .some-facts {
+            display: flex;
+            flex: 1;
+
+        }
+
+        .some-facts>* {
+            flex: 1;
+        }
+
+        #projectContainer {
+            display: grid;
+            grid-template-columns: 1fr 2fr var(--content-width) 2fr 1fr;
+        }
+
+        .project {
+            display: flex;
+        }
+
+        .content-container {
+            flex: 1;
+            padding: 10px;
+            padding-bottom: 60px;
+            align-self: flex-end;
+            te
+        }
+
+        .figure-container {
+            flex: 2;
+            padding: 60px 0px;
+        }
+
+        .figure-container figure {
+            height: 500px;
+        }
+
+        .figure-container figure img {
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="introPage">
+            <div class="page-content">
+                <div class="name-container bb bt bl br">
+                    <h1>Beasty ...</h1>
+                </div>
+                <div class="some-facts">
+                    <p class="fact1 bl br"></p>
+                    <p class="fact2 br"></p>
+                    <p class="fact3 br"></p>
+                </div>
+            </div>
+
+        </section>
+        <section id="projectContainer">
+            <div class="br"></div>
+            <div class="br"></div>
+            <section class="project-lists">
+                <section class="project-1 project">
+                    <div class="content-container">
+                        <p class="project-name">Digital-Kirana</p>
+                        <h2 class="project-objective"> Increasing operational efficiency in facilities management</h2>
+                    </div>
+                    <div class="figure-container">
+                        <figure><img
+                                src="https://t4.ftcdn.net/jpg/05/62/02/41/360_F_562024161_tGM4lFlnO0OczLYHFFuNNdMUTG9ekHxb.jpg"
+                                alt="image"></figure>
+                    </div>
+
+                </section>
+            </section>
+            <div class="bl br"></div>
+            <div></div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
